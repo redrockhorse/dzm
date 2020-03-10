@@ -107,6 +107,7 @@ def trainning():
     # 创建LBPH识别器并开始训练，当然也可以选择Eigen或者Fisher识别器
     # face_recognizer = cv2.face.LBPHFaceRecognizer_create()
     face_recognizer = cv2.face.EigenFaceRecognizer_create()
+    cv2.face.FisherFaceRecognizer_create()
     face_recognizer.train(faces, np.array(labels))
     face_recognizer.save('liu-wu.xml')
 
