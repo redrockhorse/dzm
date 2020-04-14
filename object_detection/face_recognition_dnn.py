@@ -53,9 +53,18 @@ def detect_face(image):  # 发现面部
 
 def prewhiten(x):
     mean = np.mean(x)
+    # print(x.size)
+    print('mean')
+    print(mean)
     std = np.std(x)
+    print('std')
+    print(std)
     std_adj = np.maximum(std, 1.0 / np.sqrt(x.size))
+    print('std_adj')
+    print(std_adj)
     y = np.multiply(np.subtract(x, mean), 1 / std_adj)
+    # print('y')
+    # print(y)
     return y
 
 
@@ -92,7 +101,7 @@ def imagetest():
 
 
 def videotest():
-    video_url = '/Users/hongyanma/Desktop/liu-wu.mp4'
+    video_url = '/Users/hongyanma/vlog/liu-wu.mp4'
     # video_url = 0
     cap = cv2.VideoCapture(video_url)
     while cap.isOpened():
